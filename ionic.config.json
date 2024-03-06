@@ -1,5 +1,7 @@
 {
-  "name": "noticias",
-  "integrations": {},
+  "name": "Newspaper",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

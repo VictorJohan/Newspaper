@@ -1,0 +1,25 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      Encabezados
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-segment (ionChange)="getNoticias()" [(ngModel)]="segment" style="margin-top: -1px;" scrollable mode="md" color="primary">
+    <ion-segment-button *ngFor="let item of categorias" mode="md" [value]="item">
+      <ion-label text-capitalize>
+        {{item}}
+      </ion-label>
+    </ion-segment-button>
+   
+  </ion-segment>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+<app-noticias [noticias]="noticias"></app-noticias>
+<ion-infinite-scroll threshold="150px" position="bottom" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Loading more data...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>
